@@ -1,70 +1,200 @@
-# Getting Started with Create React App
+# MYRVO Technologies — Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Production-grade SaaS website for MYRVO Technologies. Built with Vite + React + React Router, with Firebase Authentication baked in.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## What you got
 
-### `npm start`
+- **8 pages** — Home, About, Services, Careers, Contact, Login, Signup, Dashboard (protected), 404
+- **Mobile responsive** — works from 320px up
+- **Firebase Authentication** — email/password + Google sign-in, route protection
+- **Sticky navbar with mobile hamburger menu**
+- **Working contact form** with client-side validation
+- **SPA routing** correctly configured for Vercel
+- **Clean SaaS design system** matching your approved UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 1 — Run it locally
 
-### `npm test`
+```bash
+npm install
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open http://localhost:5173 — the site is live with everything working except auth (until you do step 2).
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2 — Firebase setup (login system)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The auth pages are wired but need your Firebase project credentials.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Create a Firebase project
 
-### `npm run eject`
+1. Go to https://console.firebase.google.com
+2. Click **Add project**, name it `myrvo` (or anything)
+3. Skip Google Analytics if you want (optional)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Enable Authentication
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. In the left sidebar → **Build → Authentication**
+2. Click **Get started**
+3. Under **Sign-in method**, enable:
+   - **Email/Password**
+   - **Google** (recommended)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Get your config
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. In Firebase Console → click the gear icon → **Project settings**
+2. Scroll to **Your apps** → click the `</>` (web) icon
+3. Register the app with nickname `myrvo-web`
+4. You'll see a `firebaseConfig` object — copy those values
 
-## Learn More
+### Add config to your project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Fill in `.env` with your Firebase values:
+   ```
+   VITE_FIREBASE_API_KEY=AIzaSy...
+   VITE_FIREBASE_AUTH_DOMAIN=myrvo-xxx.firebaseapp.com
+   VITE_FIREBASE_PROJECT_ID=myrvo-xxx
+   VITE_FIREBASE_STORAGE_BUCKET=myrvo-xxx.appspot.com
+   VITE_FIREBASE_MESSAGING_SENDER_ID=123456789012
+   VITE_FIREBASE_APP_ID=1:123456789012:web:abc123
+   ```
+3. Restart `npm run dev` — the warning banner on Login/Signup disappears once it picks up the new env vars.
+4. Test by creating an account on `/signup`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 3 — Deploy to Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Push to GitHub
 
-### Analyzing the Bundle Size
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+# Create a new repo on github.com, then:
+git remote add origin https://github.com/YOUR_USERNAME/myrvo-website.git
+git push -u origin main
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Connect to Vercel
 
-### Making a Progressive Web App
+1. Go to https://vercel.com and sign in with GitHub
+2. Click **Add New → Project**
+3. Import the `myrvo-website` repo
+4. Vercel auto-detects Vite — leave the defaults
+5. Click **Environment Variables** and add all six `VITE_FIREBASE_*` keys from your `.env`
+6. Click **Deploy**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+You'll get a live URL like `myrvo-website.vercel.app` in about 60 seconds.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 4 — Connect your domain (myrvo.tech)
 
-### Deployment
+### In Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Open your project → **Settings → Domains**
+2. Add `myrvo.tech` and `www.myrvo.tech`
+3. Vercel will show you the DNS records you need to add
 
-### `npm run build` fails to minify
+### In your domain registrar (Namecheap / GoDaddy / etc.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Set these DNS records (Vercel will tell you the exact values, but typically):
+
+| Type  | Host | Value                  |
+|-------|------|------------------------|
+| A     | @    | `76.76.21.21`          |
+| CNAME | www  | `cname.vercel-dns.com` |
+
+Wait 5–30 minutes for DNS to propagate. Vercel will auto-issue an SSL certificate.
+
+### Add domain to Firebase (so Google sign-in works)
+
+1. Firebase Console → **Authentication → Settings → Authorised domains**
+2. Click **Add domain** and add `myrvo.tech`
+
+---
+
+## 5 — Done
+
+You're live at https://myrvo.tech with:
+
+- ✅ Public marketing site
+- ✅ Sign up / Sign in flow
+- ✅ Protected dashboard
+- ✅ Mobile responsive
+- ✅ SSL / HTTPS
+- ✅ Global CDN
+
+---
+
+## Project structure
+
+```
+myrvo-website/
+├── index.html              ← root HTML
+├── package.json
+├── vite.config.js
+├── vercel.json             ← SPA fallback routing
+├── .env.example            ← Firebase config template
+├── public/
+│   └── favicon.svg
+└── src/
+    ├── main.jsx            ← entry point
+    ├── App.jsx             ← routes + AuthProvider
+    ├── styles.css          ← all styling
+    ├── firebase.js         ← Firebase init
+    ├── AuthContext.jsx     ← auth state + actions
+    ├── components/
+    │   ├── Navbar.jsx
+    │   ├── Footer.jsx
+    │   ├── Icon.jsx        ← all inline SVG icons
+    │   ├── PrivateRoute.jsx
+    │   └── ScrollToTop.jsx
+    └── pages/
+        ├── Home.jsx
+        ├── About.jsx
+        ├── Services.jsx
+        ├── Careers.jsx
+        ├── Contact.jsx
+        ├── Login.jsx
+        ├── Signup.jsx
+        ├── Dashboard.jsx   ← protected
+        └── NotFound.jsx
+```
+
+---
+
+## Common things you'll want to change
+
+| What | Where |
+|------|-------|
+| Hero image / About image | `src/pages/Home.jsx` — swap the Unsplash URLs |
+| Stats numbers | `src/pages/Home.jsx` — `STATS` array |
+| Services list | `src/pages/Home.jsx` (Home card grid) and `src/pages/Services.jsx` (detail page) |
+| Open job roles | `src/pages/Careers.jsx` — `ROLES` array |
+| Contact email / phone | `src/pages/Contact.jsx` |
+| Brand colours | `src/styles.css` — `:root` block at the top |
+| Logo / brand name | `src/components/Navbar.jsx` and `src/components/Footer.jsx` |
+
+---
+
+## Roadmap (v2+)
+
+The structure is set up so you can extend without rewrites:
+
+- **Firestore** for project tracking / admin data
+- **Stripe** for billing on the dashboard
+- **Admin panel** route (gate by user claim / role)
+- **AI tools page** (extend `/services` or add a new `/ai-tools` route)
+- **Blog** (add `/blog` route, plug in markdown or a headless CMS)

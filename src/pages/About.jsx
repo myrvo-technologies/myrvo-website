@@ -34,33 +34,24 @@ export default function About() {
         </div>
       </section>
 
-      <section className="about-preview" style={{ background: "#ffffff" }}>
-        <div className="container about-grid">
-          <div className="about-image">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-              alt="Team collaborating"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <span className="eyebrow">Our story</span>
-            <h2>From an idea to a studio.</h2>
-            <p>
-              Myrvo started with a simple belief: small, focused teams can build
-              software that out-competes bloated engineering orgs. Today we
-              partner with founders, operators, and enterprise teams to design,
-              build, and scale digital products end-to-end.
-            </p>
-            <p style={{ marginTop: "16px" }}>
-              From AI-powered tools to mobile apps and cloud platforms — every
-              project gets the same craftsmanship.
-            </p>
-          </div>
+      <section className="section" style={{ background: "#ffffff" }}>
+        <div className="container about-centered">
+          <span className="eyebrow">Our story</span>
+          <h2>From an idea to a studio.</h2>
+          <p>
+            Myrvo started with a simple belief: small, focused teams can build
+            software that out-competes bloated engineering orgs. Today we
+            partner with founders, operators, and enterprise teams to design,
+            build, and scale digital products end-to-end.
+          </p>
+          <p>
+            From AI-powered tools to mobile apps and cloud platforms — every
+            project gets the same craftsmanship.
+          </p>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" style={{ background: "var(--bg-muted)" }}>
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">What we stand for</span>
@@ -68,7 +59,7 @@ export default function About() {
           </div>
           <div className="values-grid">
             {VALUES.map((v) => (
-              <div className="value-card" key={v.title}>
+              <div className="value-card" key={v.title} style={{ background: "#ffffff" }}>
                 <div className="icon-tile">
                   <Icon name={v.icon} size={22} />
                 </div>

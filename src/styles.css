@@ -394,6 +394,29 @@ main {
   }
 }
 
+/* Centered hero (no image variant) */
+.hero-centered {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0 24px;
+}
+.hero-centered .eyebrow {
+  margin-bottom: 16px;
+}
+.hero-centered h1 {
+  margin-bottom: 22px;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+}
+.hero-centered p.lead {
+  margin: 0 auto 36px;
+  max-width: 620px;
+  font-size: 1.125rem;
+}
+.hero-centered .hero-cta {
+  justify-content: center;
+}
+
 /* ---------- Feature cards (4-up) ---------- */
 .features {
   padding: 24px 0 56px;
@@ -494,6 +517,31 @@ main {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+}
+
+/* Centered about block (no image variant) */
+.about-centered {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-centered .eyebrow {
+  margin-bottom: 14px;
+}
+.about-centered h2 {
+  margin-bottom: 20px;
+}
+.about-centered p {
+  margin: 0 auto 18px;
+  max-width: 620px;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+.about-centered p:last-of-type {
+  margin-bottom: 32px;
+}
+.about-centered .btn {
+  margin-top: 8px;
 }
 
 /* ---------- Stats strip ---------- */

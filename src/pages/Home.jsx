@@ -57,30 +57,21 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <span className="eyebrow">Innovate. Build. Deliver.</span>
-            <h1>Building Digital Solutions for a Better Tomorrow</h1>
-            <p className="lead">
-              Myrvo Technologies is a forward-thinking technology company
-              delivering innovative software, web, and mobile solutions that
-              empower businesses to grow and succeed.
-            </p>
-            <div className="hero-cta">
-              <Link to="/services" className="btn btn-primary btn-lg">
-                Our Services
-              </Link>
-              <Link to="/contact" className="btn btn-outline btn-lg">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern dashboard on laptop"
-              loading="eager"
-            />
+        <div className="container hero-centered">
+          <span className="eyebrow">Innovate. Build. Deliver.</span>
+          <h1>Building Digital Solutions for a Better Tomorrow</h1>
+          <p className="lead">
+            Myrvo Technologies is a forward-thinking technology company
+            delivering innovative software, web, and mobile solutions that
+            empower businesses to grow and succeed.
+          </p>
+          <div className="hero-cta">
+            <Link to="/services" className="btn btn-primary btn-lg">
+              Our Services
+            </Link>
+            <Link to="/contact" className="btn btn-outline btn-lg">
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
@@ -104,27 +95,18 @@ export default function Home() {
 
       {/* ABOUT PREVIEW */}
       <section className="about-preview">
-        <div className="container about-grid">
-          <div>
-            <span className="eyebrow">About Myrvo Technologies</span>
-            <h2>We turn ideas into powerful digital experiences.</h2>
-            <p>
-              Myrvo Technologies was founded with a mission to help businesses
-              and startups transform their ideas into powerful digital products.
-              We combine creativity, innovation and technical expertise to
-              deliver solutions that make a difference.
-            </p>
-            <Link to="/about" className="btn btn-primary">
-              Read More About Us
-            </Link>
-          </div>
-          <div className="about-image">
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern Myrvo office space"
-              loading="lazy"
-            />
-          </div>
+        <div className="container about-centered">
+          <span className="eyebrow">About Myrvo Technologies</span>
+          <h2>We turn ideas into powerful digital experiences.</h2>
+          <p>
+            Myrvo Technologies was founded with a mission to help businesses
+            and startups transform their ideas into powerful digital products.
+            We combine creativity, innovation and technical expertise to
+            deliver solutions that make a difference.
+          </p>
+          <Link to="/about" className="btn btn-primary">
+            Read More About Us
+          </Link>
         </div>
       </section>
 

@@ -103,9 +103,7 @@ export default function Terms() {
           </p>
 
           <div className="legal-note">
-            <strong>Note:</strong> This is a starter template. Before launching
-            paid services or signing client contracts, have these Terms (and
-            your service agreements) reviewed by a qualified solicitor.
+            These terms are currently under legal review and may be updated.
           </div>
         </div>
       </section>

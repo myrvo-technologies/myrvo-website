@@ -101,10 +101,7 @@ export default function Privacy() {
           </p>
 
           <div className="legal-note">
-            <strong>Note:</strong> This policy is a starting template. Before
-            production launch, have it reviewed by a qualified legal
-            professional to ensure full compliance with UK GDPR, the Data
-            Protection Act 2018, and your specific business processes.
+            This policy is currently under legal review and may be updated.
           </div>
         </div>
       </section>

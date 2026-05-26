@@ -95,10 +95,7 @@ export default function Cookies() {
           </p>
 
           <div className="legal-note">
-            <strong>Note:</strong> This template covers the basics. If you add
-            analytics, advertising, or session-recording tools, you'll need a
-            consent banner (cookie banner) to comply with UK PECR and GDPR.
-            Have a solicitor review before adding tracking.
+            This policy is currently under legal review and may be updated.
           </div>
         </div>
       </section>

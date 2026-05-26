@@ -39,13 +39,25 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Follow Us</h4>
             <div className="socials">
-              <a href="#" className="social" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/company/myrvotech/"
+                className="social"
+                aria-label="Myrvo Technologies on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Icon name="linkedin" size={18} />
               </a>
-              <a href="#" className="social" aria-label="Twitter">
-                <Icon name="twitter" size={18} />
+              <a
+                href="https://x.com/myrvotech"
+                className="social"
+                aria-label="Myrvo Technologies on X"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon name="x" size={18} />
               </a>
-              <a href="mailto:info@myrvo.tech" className="social" aria-label="Email">
+              <a href="mailto:info@myrvo.tech" className="social" aria-label="Email Myrvo Technologies">
                 <Icon name="mail" size={18} />
               </a>
             </div>

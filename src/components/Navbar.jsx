@@ -23,6 +23,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <Link to="/" className="brand" aria-label="MYRVO Technologies home">
+          <img src="/logo-badge.png" alt="" className="brand-badge" />
           <span>myrvo technologies</span>
         </Link>
 

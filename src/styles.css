@@ -1288,3 +1288,7 @@ main {
 .install-app-btn img {
   border-radius: 50%;
 }
+
+.mobile-menu-actions {
+  flex-direction: column;
+}

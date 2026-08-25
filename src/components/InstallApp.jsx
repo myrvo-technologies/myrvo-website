@@ -1,34 +1,45 @@
 import { useEffect, useState } from "react";
 
-export default function InstallApp() {
-  const [promptEvent, setPromptEvent] = useState(null);
+// The browser fires `beforeinstallprompt` only ONCE per page load, and it can
+// fire before React mounts. Capture it at module level and let every rendered
+// InstallApp button share it.
+let deferredPrompt = null;
+const listeners = new Set();
+const notify = () => listeners.forEach((fn) => fn());
+
+if (typeof window !== "undefined") {
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    notify();
+  });
+  window.addEventListener("appinstalled", () => {
+    deferredPrompt = null;
+    notify();
+  });
+}
+
+export default function InstallApp({ className = "btn btn-outline install-app-btn" }) {
+  const [, rerender] = useState(0);
 
   useEffect(() => {
-    const onPrompt = (e) => {
-      e.preventDefault();
-      setPromptEvent(e);
-    };
-    const onInstalled = () => setPromptEvent(null);
-
-    window.addEventListener("beforeinstallprompt", onPrompt);
-    window.addEventListener("appinstalled", onInstalled);
-    return () => {
-      window.removeEventListener("beforeinstallprompt", onPrompt);
-      window.removeEventListener("appinstalled", onInstalled);
-    };
+    const fn = () => rerender((n) => n + 1);
+    listeners.add(fn);
+    return () => listeners.delete(fn);
   }, []);
 
-  // Browser hasn't offered install (unsupported, or app already installed)
-  if (!promptEvent) return null;
+  // Unsupported browser, or app already installed
+  if (!deferredPrompt) return null;
 
-  const install = async () => {
-    promptEvent.prompt();
-    await promptEvent.userChoice;
-    setPromptEvent(null);
+  const install = () => {
+    const ev = deferredPrompt;
+    deferredPrompt = null; // an event can only prompt once — hide all buttons
+    notify();
+    ev.prompt();
   };
 
   return (
-    <button type="button" className="btn btn-outline install-app-btn" onClick={install}>
+    <button type="button" className={className} onClick={install}>
       <img src="/logo-badge.png" alt="" width="18" height="18" />
       Install our app
     </button>

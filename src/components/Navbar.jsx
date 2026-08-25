@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import Icon from "./Icon.jsx";
+import InstallApp from "./InstallApp.jsx";
 
 const LINKS = [
   { to: "/", label: "Home" },
@@ -41,6 +42,7 @@ export default function Navbar() {
         </nav>
 
         <div className="nav-actions">
+          <InstallApp className="btn btn-ghost" />
           <Link to="/contact" className="btn btn-primary">
             Start a Project
             <Icon name="arrowRight" size={16} />
@@ -72,6 +74,7 @@ export default function Navbar() {
           <Link to="/contact" className="btn btn-primary btn-full">
             Start a Project
           </Link>
+          <InstallApp className="btn btn-outline btn-full" />
         </div>
       </div>
     </header>

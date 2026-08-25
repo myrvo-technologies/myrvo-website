@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "./Icon.jsx";
+import InstallApp from "./InstallApp.jsx";
 
 export default function Footer() {
   return (
@@ -14,6 +15,7 @@ export default function Footer() {
               AI + SaaS + product engineering studio for modern businesses. We
               build digital solutions for a better tomorrow.
             </p>
+            <InstallApp />
           </div>
 
           <div className="footer-col">

@@ -1280,3 +1280,11 @@ main {
 .legal-note strong {
   color: #78350f;
 }
+
+.install-app-btn {
+  margin-top: 16px;
+}
+
+.install-app-btn img {
+  border-radius: 50%;
+}

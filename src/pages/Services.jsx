@@ -9,6 +9,12 @@ const SERVICES = [
     points: ["React, Next.js, and Vite expertise", "SEO-ready and accessible by default", "Performance-optimised builds"],
   },
   {
+    icon: "layout",
+    title: "Web Portals & Platforms",
+    desc: "Online portals that bring your content, services and people together in one place — for customers, members or your own team.",
+    points: ["Customer, client and member portals", "Content, directory and listing platforms", "Secure sign-in with role-based access"],
+  },
+  {
     icon: "mobile",
     title: "Mobile App Development",
     desc: "Native and cross-platform mobile apps for iOS and Android. From MVP to scale-ready apps with millions of users.",
@@ -38,6 +44,12 @@ const SERVICES = [
     desc: "Custom automation to remove busywork — internal tools, integrations, and pipelines that save hours every week.",
     points: ["Internal admin panels", "API integrations and webhooks", "Scheduled jobs and reporting"],
   },
+  {
+    icon: "gamepad",
+    title: "Interactive & Entertainment Apps",
+    desc: "Casual games and interactive experiences for web and mobile — built with the same engineering standards as our business software.",
+    points: ["Browser and mobile casual games", "Interactive web experiences", "Gamified features for existing apps"],
+  },
 ];
 
 // Some icons in the array above use names not yet in our Icon set ("brain")
@@ -56,8 +68,9 @@ export default function Services() {
           <span className="eyebrow">What we offer</span>
           <h1>Services built for shipping</h1>
           <p>
-            From web and mobile to AI and SaaS — every service ships with the
-            same standard of craft, security, and reliability.
+            From web, mobile and portals to AI, SaaS and interactive apps — every
+            service ships with the same standard of craft, security, and
+            reliability.
           </p>
         </div>
       </section>

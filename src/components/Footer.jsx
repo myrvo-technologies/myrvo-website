@@ -70,7 +70,7 @@ export default function Footer() {
           <div>
             <div>© {new Date().getFullYear()} Myrvo Technologies Ltd. All rights reserved.</div>
             <div style={{ marginTop: "6px", fontSize: "0.8125rem", color: "var(--text-faint)" }}>
-              Registered in England &amp; Wales · Company No. 17034685 · Chandos Business Centre, Warwick Street, Leamington Spa, CV32 4RJ
+              Registered in England &amp; Wales · Company No. 17034685 · Chandos Business Centre, 87A Warwick Street, Leamington Spa, Warwickshire, CV32 4RJ
             </div>
           </div>
           <span>Built with care in the UK.</span>

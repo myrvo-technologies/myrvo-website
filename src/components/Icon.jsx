@@ -143,6 +143,19 @@ const PATHS = {
       <circle cx="12" cy="10" r="3" />
     </>
   ),
+  gamepad: (
+    <>
+      <path d="M6 12h4M8 10v4" />
+      <path d="M15 13h.01M18 11h.01" />
+      <path d="M17.3 5H6.7a4 4 0 0 0-3.95 3.4L2 14.6A3 3 0 0 0 7.2 17l1.3-2h7l1.3 2a3 3 0 0 0 5.2-2.4l-.75-6.2A4 4 0 0 0 17.3 5z" />
+    </>
+  ),
+  layout: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18M9 21V9" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 24, strokeWidth = 1.75, ...rest }) {

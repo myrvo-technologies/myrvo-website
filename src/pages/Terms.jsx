@@ -21,7 +21,7 @@ export default function Terms() {
           <p>
             Myrvo Technologies Ltd is a company registered in England &amp; Wales
             (company number 17034685), with registered office at Chandos Business
-            Centre, Warwick Street, Leamington Spa, CV32 4RJ.
+            Centre, 87A Warwick Street, Leamington Spa, Warwickshire, CV32 4RJ.
           </p>
 
           <h2>2. Use of our website</h2>

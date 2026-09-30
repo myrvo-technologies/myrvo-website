@@ -107,8 +107,12 @@ export default function Contact() {
                   <Icon name="mapPin" size={20} />
                 </div>
                 <div>
-                  <h4>Office</h4>
-                  <p>Leamington Spa, United Kingdom</p>
+                  <h4>Registered office</h4>
+                  <p>
+                    Chandos Business Centre, 87A Warwick Street,
+                    <br />
+                    Leamington Spa, Warwickshire, CV32 4RJ
+                  </p>
                 </div>
               </div>
 

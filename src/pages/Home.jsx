@@ -61,7 +61,7 @@ export default function Home() {
           <span className="eyebrow">Innovate. Build. Deliver.</span>
           <h1>Building Digital Solutions for a Better Tomorrow</h1>
           <p className="lead">
-            Myrvo Technologies is a forward-thinking technology company
+            MYRVO<sup className="tm">®</sup> Technologies is a forward-thinking technology company
             delivering innovative software, web, and mobile solutions that
             empower businesses to grow and succeed.
           </p>

@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <div className="footer-brand">
-              <span>myrvo technologies</span>
+              <span>myrvo<sup className="tm">®</sup> technologies</span>
             </div>
             <p className="footer-tagline">
               AI + SaaS + product engineering studio for modern businesses. We
@@ -70,6 +70,9 @@ export default function Footer() {
           <div>
             <div>© {new Date().getFullYear()} Myrvo Technologies Ltd. All rights reserved.</div>
             <div style={{ marginTop: "6px", fontSize: "0.8125rem", color: "var(--text-faint)" }}>
+              MYRVO® is a registered trade mark (UK00004341520).
+            </div>
+            <div style={{ marginTop: "4px", fontSize: "0.8125rem", color: "var(--text-faint)" }}>
               Registered in England &amp; Wales · Company No. 17034685 · Chandos Business Centre, 87A Warwick Street, Leamington Spa, Warwickshire, CV32 4RJ
             </div>
           </div>

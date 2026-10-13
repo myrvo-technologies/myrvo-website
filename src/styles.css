@@ -1292,3 +1292,6 @@ main {
 .mobile-menu-actions {
   flex-direction: column;
 }
+
+/* Registered trade mark symbol */
+sup.tm { font-size: 0.55em; vertical-align: super; line-height: 0; margin-left: 0.05em; font-weight: 500; }

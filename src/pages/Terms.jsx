@@ -43,6 +43,11 @@ export default function Terms() {
             You may not reproduce, distribute, or modify any content without our
             prior written permission.
           </p>
+          <p>
+            MYRVO® is a registered trade mark in the United Kingdom (registration
+            no. UK00004341520, classes 9, 38 and 42). Use of the MYRVO name or
+            logo without permission is not allowed.
+          </p>
 
           <h2>4. Accounts</h2>
           <p>
